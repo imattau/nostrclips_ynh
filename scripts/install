@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression "Setting up source files..."
+
+ynh_setup_source --dest_dir="$install_dir/source"
+
+chown -R "$app:www-data" "$install_dir"
+
+#=================================================
+# BUILD THE APP
+#=================================================
+ynh_script_progression "Building Nostr Clips (this can take a few minutes)..."
+
+nostrclips_build
+
+chown -R "$app:www-data" "$install_dir"
+
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_script_progression "Configuring NGINX web server..."
+
+ynh_config_add_nginx
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression "Installation of $app completed"

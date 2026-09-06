@@ -1,0 +1,12 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/tests.v1.schema.json
+
+test_format = 1.0
+
+[default]
+    # This package is domain-only (no `install.path` question), so the
+    # "install.subdir" test doesn't apply.
+    exclude = ["install.subdir"]
+
+    [default.curl_tests]
+    home.path = "/"
+    home.expect_title = "Nostr Clips"
