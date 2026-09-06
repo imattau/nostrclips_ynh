@@ -12,7 +12,16 @@
 # the install/upgrade scripts).
 nostrclips_build() {
 	pushd "$install_dir/source"
-		ynh_exec_as_app npm ci
+		# --ignore-scripts: onnxruntime-node (a transitive dep of
+		# @huggingface/transformers, pulled in only for a Node-native binding
+		# this browser bundle never loads - the in-browser build uses
+		# onnxruntime-web instead) runs a postinstall script that downloads a
+		# prebuilt binary from GitHub releases, which can time out and is
+		# needless work either way. Skipping lifecycle scripts also skips the
+		# package's own postinstall (scripts/copy-ffmpeg-core.sh), so run that
+		# one explicitly.
+		ynh_exec_as_app npm ci --ignore-scripts
+		ynh_exec_as_app bash scripts/copy-ffmpeg-core.sh
 		ynh_exec_as_app npm run build
 	popd
 
