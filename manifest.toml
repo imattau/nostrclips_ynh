@@ -7,7 +7,7 @@ name = "Nostr Clips"
 description.en = "Consumption-first, TikTok-style vertical short-form video client for Nostr"
 description.fr = "Client Nostr de vidéos courtes verticales, façon TikTok, orienté consultation"
 
-version = "0.3.3~ynh1"
+version = "0.3.4~ynh1"
 
 maintainers = []
 
@@ -43,8 +43,8 @@ ram.runtime = "20M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/imattau/scrollstr/archive/bc3c6ab78a11e7597f4391ec5d8693c377d5f10d.tar.gz"
-    sha256 = "ceb68945ad417f078eb78067dc72b4c18436be9e1b99354b9a0294268882b36f"
+    url = "https://github.com/imattau/scrollstr/archive/db317c820e74792588b54d5aa1ca18e83bd38c42.tar.gz"
+    sha256 = "3ec1575850c8a3d3f6c85fad884a37093d42967e9606b013c1f401df1f8f35e4"
     autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]

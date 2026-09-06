@@ -11,7 +11,7 @@ once this package is added to the YunoHost apps catalog. It should be regenerate
 Consumption-first, TikTok-style vertical short-form video client for Nostr
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://github.com/imattau/scrollstr)
-[![Version: 0.3.3~ynh1](https://img.shields.io/badge/Version-0.3.3~ynh1-rgb(18,138,11)?style=for-the-badge)]()
+[![Version: 0.3.4~ynh1](https://img.shields.io/badge/Version-0.3.4~ynh1-rgb(18,138,11)?style=for-the-badge)]()
 
 ## 📦 Developer info
 
